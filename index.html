@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#FFFFFF">
+<title>Brunch Quartinho Rosa · Minha Identidade em Cristo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFFFF;
+    --card:#FFFFFF;
+    --rose:#E0688F;
+    --rose-deep:#B83B62;
+    --plum:#6E2E44;
+    --gold:#C13F68;
+    --gold-soft:#F6D3E0;
+    --line:#F3D6E1;
+  }
+  *{box-sizing:border-box; color-scheme:light;}
+  html{scroll-behavior:smooth; color-scheme:light;}
+  body{
+    margin:0;
+    background:var(--cream) !important;
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(224,104,143,0.08), transparent 45%),
+      radial-gradient(circle at 90% 92%, rgba(224,104,143,0.08), transparent 45%);
+    color:var(--plum);
+    font-family:'Jost', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px 80px;}
+
+  /* ---- HERO ---- */
+  .hero{
+    position:relative;
+    padding:64px 20px 40px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero > *{position:relative; z-index:1;}
+  .eyebrow{
+    font-family:'Jost', sans-serif;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--rose-deep);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:44px;
+    line-height:1.08;
+    margin:0 0 10px;
+    color:var(--plum);
+  }
+  .subtitle{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:22px;
+    color:var(--rose);
+    margin:0 0 28px;
+  }
+  .verse{
+    max-width:480px;
+    margin:0 auto 12px;
+    font-size:14.5px;
+    color:#6b4a58;
+  }
+  .verse span{color:var(--gold); font-weight:600;}
+
+  /* ---- INFO CARD ---- */
+  .info-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:26px 24px;
+    margin-top:28px;
+    box-shadow:0 12px 30px -18px rgba(69,34,48,0.35);
+    text-align:left;
+  }
+  .info-row{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding:10px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .info-row:last-child{border-bottom:none;}
+  .info-icon{
+    flex:none;
+    width:34px;height:34px;
+    border-radius:50%;
+    background:linear-gradient(160deg,var(--rose),var(--rose-deep));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;
+    font-size:16px;
+  }
+  .info-text .label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+  .info-text .value{font-size:15.5px;font-weight:500;color:var(--plum);}
+  .desc{
+    font-size:14.5px;
+    color:#6b4a58;
+    text-align:left;
+    margin-top:16px;
+    padding-top:16px;
+    border-top:1px dashed var(--line);
+  }
+
+  /* ---- FORM ---- */
+  .form-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    margin-top:24px;
+    padding:8px 24px 28px;
+    box-shadow:0 12px 30px -18px rgba(69,34,48,0.35);
+  }
+  fieldset{border:none;padding:22px 0;margin:0;border-bottom:1px solid var(--line);}
+  fieldset:last-of-type{border-bottom:none;}
+  .q-num{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:13px;
+    margin-bottom:4px;
+    display:block;
+  }
+  legend, .q-label{
+    font-size:16px;
+    font-weight:600;
+    color:var(--plum);
+    padding:0;
+    margin-bottom:4px;
+    line-height:1.35;
+  }
+  .q-help{font-size:13px;color:#8a6a76;margin-bottom:10px;}
+  .required{color:var(--rose-deep);}
+  input[type=text], input[type=tel], input[type=date], select, textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    background:#fff;
+    font-family:'Jost',sans-serif;
+    font-size:15px;
+    color:var(--plum);
+    margin-top:6px;
+  }
+  input:focus, select:focus, textarea:focus{
+    outline:none;
+    border-color:var(--rose);
+    box-shadow:0 0 0 3px rgba(193,87,122,0.15);
+  }
+  textarea{resize:vertical;min-height:70px;}
+  .radio-group{display:flex; flex-direction:column; gap:8px; margin-top:8px;}
+  .radio-option{
+    display:flex; align-items:center; gap:10px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    padding:11px 14px;
+    cursor:pointer;
+    transition:border-color .15s, background .15s;
+  }
+  .radio-option:has(input:checked){
+    border-color:var(--rose);
+    background:rgba(193,87,122,0.06);
+  }
+  .radio-option input{width:16px;height:16px;accent-color:var(--rose-deep);}
+  .checkbox-option{
+    display:flex; align-items:flex-start; gap:10px;
+    border:1.5px solid var(--gold-soft);
+    background:rgba(199,154,73,0.08);
+    border-radius:10px;
+    padding:14px;
+    margin-top:8px;
+  }
+  .checkbox-option input{margin-top:3px;width:16px;height:16px;accent-color:var(--rose-deep);flex:none;}
+  .checkbox-option label{font-size:14.5px; color:#5b3542; font-style:italic; font-family:'Fraunces',serif;}
+  .pix-box{
+    margin-top:10px;
+    border:1.5px solid var(--gold-soft);
+    background:rgba(224,104,143,0.06);
+    border-radius:12px;
+    padding:14px 16px;
+  }
+  .pix-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose-deep);font-weight:600;margin-top:6px;}
+  .pix-label:first-child{margin-top:0;}
+  .pix-value{font-size:15px;font-weight:600;color:var(--plum);}
+  .file-drop{
+    margin-top:8px;
+    border:1.5px dashed var(--rose);
+    border-radius:12px;
+    padding:20px 14px;
+    text-align:center;
+    background:rgba(193,87,122,0.05);
+  }
+  .file-drop input{margin-top:10px;font-size:13px;}
+  .file-name{font-size:13px;color:var(--rose-deep);font-weight:600;margin-top:8px;}
+
+  .submit-btn{
+    width:100%;
+    margin-top:26px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--rose),var(--rose-deep));
+    color:#fff;
+    font-family:'Jost',sans-serif;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:0.02em;
+    cursor:pointer;
+    box-shadow:0 10px 24px -10px rgba(156,62,93,0.6);
+    transition:transform .15s, box-shadow .15s;
+  }
+  .submit-btn:hover{transform:translateY(-1px); box-shadow:0 14px 28px -10px rgba(156,62,93,0.7);}
+  .submit-btn:active{transform:translateY(0);}
+  .error-msg{color:var(--rose-deep); font-size:13px; margin-top:10px; display:none;}
+
+  /* ---- CONFIRMATION ---- */
+  .confirm-card{
+    display:none;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    margin-top:24px;
+    padding:32px 26px;
+    text-align:center;
+    box-shadow:0 12px 30px -18px rgba(69,34,48,0.35);
+  }
+  .confirm-card h2{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    color:var(--rose-deep);
+    font-size:24px;
+    margin:6px 0 12px;
+  }
+  .confirm-card p{font-size:14.5px;color:#6b4a58;}
+  .summary{
+    text-align:left;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 18px;
+    font-size:13.5px;
+    color:var(--plum);
+    margin:18px 0;
+    white-space:pre-wrap;
+    max-height:280px;
+    overflow-y:auto;
+  }
+  .confirm-actions{display:flex; flex-direction:column; gap:10px; margin-top:14px;}
+  .btn-outline{
+    padding:13px;
+    border-radius:10px;
+    border:1.5px solid var(--rose);
+    color:var(--rose-deep);
+    background:#fff;
+    font-family:'Jost',sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    cursor:pointer;
+  }
+  .btn-whats{
+    padding:13px;
+    border-radius:10px;
+    border:none;
+    background:#25D366;
+    color:#fff;
+    font-family:'Jost',sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    cursor:pointer;
+    text-decoration:none;
+    display:block;
+  }
+
+  footer{text-align:center; margin-top:36px; font-size:12px; color:#a17f8a; letter-spacing:0.04em;}
+
+  @media (max-width:420px){
+    h1{font-size:34px;}
+    .subtitle{font-size:19px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">🌷 Brunch Quartinho Rosa 🌷</div>
+    <h1>Minha identidade em Cristo</h1>
+    <p class="subtitle">Seja muito bem-vinda! 💗</p>
+    <p class="verse">O Quartinho Rosa será uma tarde especial preparada com muito carinho para meninas de <span>11 a 15 anos</span>. Teremos um delicioso brunch, momentos de comunhão, dinâmicas, atividades e uma conversa sobre identidade, feminilidade cristã e o propósito de Deus para nossas vidas.</p>
+    <p class="verse">Nosso desejo é que cada menina saia desse encontro sabendo que é preciosa, amada por Deus e chamada para viver de acordo com os princípios da Sua Palavra.</p>
+    <p class="verse" style="font-style:italic;">Preencha este formulário com atenção.</p>
+
+    <div class="info-card">
+      <div class="info-row">
+        <div class="info-icon">📅</div>
+        <div class="info-text">
+          <div class="label">Data e horário</div>
+          <div class="value">29/08/2026 · 15h00 às 18h00</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">⏳</div>
+        <div class="info-text">
+          <div class="label">Prazo de inscrição</div>
+          <div class="value">Até 10/08/2026</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <div class="label">Local</div>
+          <div class="value">IIIGD SEDE DF (W3 Sul)</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">💬</div>
+        <div class="info-text">
+          <div class="label">Convidada especial</div>
+          <div class="value">Pra. Flávia Santos</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🎨</div>
+        <div class="info-text">
+          <div class="label">Programação</div>
+          <div class="value">Brunch • Pintura em tela • Comunhão • Palavra de Deus • Dinâmicas</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">👗</div>
+        <div class="info-text">
+          <div class="label">Look</div>
+          <div class="value">Vestido modesto</div>
+        </div>
+      </div>
+      <p class="desc">Preencha a ficha abaixo para confirmar a inscrição da participante. Todos os campos marcados com <span class="required">*</span> são obrigatórios.</p>
+    </div>
+  </div>
+
+  <form class="form-card" id="brunchForm">
+
+    <fieldset>
+      <span class="q-num">01</span>
+      <label class="q-label" for="nome">Nome completo da participante <span class="required">*</span></label>
+      <input type="text" id="nome" name="nome" required>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">02</span>
+      <label class="q-label" for="idade">Idade <span class="required">*</span></label>
+      <select id="idade" name="idade" required>
+        <option value="" disabled selected>Selecione</option>
+        <option>11 anos</option>
+        <option>12 anos</option>
+        <option>13 anos</option>
+        <option>14 anos</option>
+        <option>15 anos</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">03</span>
+      <label class="q-label" for="nasc">Data de nascimento <span class="required">*</span></label>
+      <input type="date" id="nasc" name="nasc" required>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">04</span>
+      <label class="q-label" for="responsavel">Nome do responsável <span class="required">*</span></label>
+      <input type="text" id="responsavel" name="responsavel" required>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">05</span>
+      <label class="q-label" for="telefone">Telefone do responsável (WhatsApp) <span class="required">*</span></label>
+      <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">06</span>
+      <label class="q-label" for="telefoneParticipante">Telefone da participante (WhatsApp)</label>
+      <div class="q-help">Opcional</div>
+      <input type="tel" id="telefoneParticipante" name="telefoneParticipante" placeholder="(00) 00000-0000">
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">07</span>
+      <label class="q-label">A participante congrega na igreja? <span class="required">*</span></label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="congrega" value="Sim" required> Sim</label>
+        <label class="radio-option"><input type="radio" name="congrega" value="Não"> Não</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">08</span>
+      <label class="q-label" for="qualIgreja">Se sim, em qual igreja? <span class="required">*</span></label>
+      <div class="q-help">(Exemplo: Valparaíso, Samambaia)</div>
+      <input type="text" id="qualIgreja" name="qualIgreja" required>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">09</span>
+      <label class="q-label" for="pastor">Pastor(a):</label>
+      <div class="q-help">Nome do pastor ou pastora responsável pela igreja</div>
+      <input type="text" id="pastor" name="pastor">
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">10</span>
+      <label class="q-label" for="alergia">A participante possui alguma alergia alimentar ou restrição alimentar?</label>
+      <div class="q-help">Caso possua, descreva qual.</div>
+      <textarea id="alergia" name="alergia"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">11</span>
+      <label class="q-label" for="saude">A participante faz uso de algum medicamento ou possui alguma condição de saúde que a equipe deva saber?</label>
+      <div class="q-help">Caso sim, descreva.</div>
+      <textarea id="saude" name="saude"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">12</span>
+      <label class="q-label">Autorização do responsável <span class="required">*</span></label>
+      <div class="checkbox-option">
+        <input type="checkbox" id="autorizacao" name="autorizacao" required>
+        <label for="autorizacao">"Declaro que sou o(a) responsável pela participante e autorizo sua participação no Brunch Quartinho Rosa."</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <span class="q-num">13</span>
+      <label class="q-label">Comprovante de pagamento da inscrição (R$ 15,00) <span class="required">*</span></label>
+      <div class="q-help">Anexe o comprovante do Pix para confirmação da inscrição.</div>
+      <div class="pix-box">
+        <div class="pix-label">Taxa de inscrição</div>
+        <div class="pix-value">R$ 15,00</div>
+        <div class="pix-label">Chave Pix (e-mail)</div>
+        <div class="pix-value">jqvteendf@gmail.com</div>
+      </div>
+      <div class="file-drop">
+        <div>📎 Selecione o arquivo do comprovante</div>
+        <input type="file" id="comprovante" name="comprovante" accept="image/*,.pdf" required>
+        <div class="file-name" id="fileName"></div>
+      </div>
+    </fieldset>
+
+    <p class="error-msg" id="errorMsg">Por favor, preencha todos os campos obrigatórios antes de enviar.</p>
+    <button type="submit" class="submit-btn">Enviar inscrição</button>
+  </form>
+
+  <div class="confirm-card" id="confirmCard">
+    <div class="eyebrow">Inscrição preenchida</div>
+    <h2>Ficha pronta, meninas! 🌷</h2>
+    <p>Confira o resumo abaixo e toque em <strong>"Enviar por WhatsApp"</strong> para encaminhar a inscrição (junto com o comprovante em anexo) para a organização do evento.</p>
+    <div class="summary" id="summaryText"></div>
+    <div class="confirm-actions">
+      <a class="btn-whats" id="whatsBtn" href="#" target="_blank">Enviar por WhatsApp</a>
+      <button class="btn-outline" id="copyBtn" type="button">Copiar resumo</button>
+    </div>
+  </div>
+
+  <footer>Brunch Quartinho Rosa · Minha Identidade em Cristo · 29 de agosto de 2026</footer>
+</div>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — cole aqui a URL do seu Apps Script
+   (veja o passo a passo enviado junto com este arquivo)
+   ========================================================= */
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw6kM88r_7J4ee2rnTOUi-oIlwLcRKYlVYuVatOxefEd3uPR7zWAV5AXs3dU2RqR12f_Q/exec";
+
+const form = document.getElementById('brunchForm');
+const fileInput = document.getElementById('comprovante');
+const fileName = document.getElementById('fileName');
+const errorMsg = document.getElementById('errorMsg');
+const submitBtn = form.querySelector('.submit-btn');
+const submitBtnDefaultText = submitBtn.textContent;
+
+fileInput.addEventListener('change', () => {
+  fileName.textContent = fileInput.files.length ? '✓ ' + fileInput.files[0].name : '';
+});
+
+function fileToBase64(file){
+  return new Promise((resolve, reject) => {
+    if(!file){ resolve(null); return; }
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(',')[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  if(!form.checkValidity()){
+    errorMsg.textContent = 'Por favor, preencha todos os campos obrigatórios antes de enviar.';
+    errorMsg.style.display = 'block';
+    form.reportValidity();
+    return;
+  }
+  errorMsg.style.display = 'none';
+
+  const data = new FormData(form);
+  const congregaVal = form.querySelector('input[name="congrega"]:checked')?.value || '';
+  const arquivo = fileInput.files.length ? fileInput.files[0].name : '(nenhum arquivo anexado)';
+
+  const summary =
+`FICHA DE INSCRIÇÃO — Brunch Quartinho Rosa
+"minha identidade em Cristo"
+29/08/2026 · 15h00 às 18h00
+Local: IIIGD SEDE DF (W3 Sul)
+
+1. Nome completo da participante: ${data.get('nome')}
+2. Idade: ${data.get('idade')}
+3. Data de nascimento: ${data.get('nasc')}
+4. Nome do responsável: ${data.get('responsavel')}
+5. Telefone do responsável (WhatsApp): ${data.get('telefone')}
+6. Telefone da participante (WhatsApp): ${data.get('telefoneParticipante') || '-'}
+7. Congrega na igreja? ${congregaVal}
+8. Qual igreja: ${data.get('qualIgreja') || '-'}
+9. Pastor(a): ${data.get('pastor') || '-'}
+10. Alergia/restrição alimentar: ${data.get('alergia') || '-'}
+11. Medicamento/condição de saúde: ${data.get('saude') || '-'}
+12. Autorização do responsável: Confirmada ✓
+13. Comprovante de pagamento (R$ 15,00 · Pix jqvteendf@gmail.com): ${arquivo}`;
+
+  // Se o link do Apps Script ainda não foi configurado, apenas segue o fluxo antigo (resumo + WhatsApp)
+  if(APPS_SCRIPT_URL.indexOf('COLE_AQUI') !== -1){
+    document.getElementById('summaryText').textContent = summary;
+    document.getElementById('whatsBtn').href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(summary);
+    document.getElementById('copyBtn').onclick = () => {
+      navigator.clipboard.writeText(summary);
+      document.getElementById('copyBtn').textContent = 'Copiado ✓';
+      setTimeout(()=> document.getElementById('copyBtn').textContent = 'Copiar resumo', 1800);
+    };
+    form.style.display = 'none';
+    document.getElementById('confirmCard').style.display = 'block';
+    document.getElementById('confirmCard').scrollIntoView({behavior:'smooth'});
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
+
+  try {
+    const file = fileInput.files[0];
+    const base64 = await fileToBase64(file);
+
+    const payload = {
+      nome: data.get('nome'),
+      idade: data.get('idade'),
+      nasc: data.get('nasc'),
+      responsavel: data.get('responsavel'),
+      telefone: data.get('telefone'),
+      telefoneParticipante: data.get('telefoneParticipante') || '',
+      congrega: congregaVal,
+      qualIgreja: data.get('qualIgreja') || '',
+      pastor: data.get('pastor') || '',
+      alergia: data.get('alergia') || '',
+      saude: data.get('saude') || '',
+      autorizacao: form.querySelector('#autorizacao').checked,
+      comprovante: file ? { fileName: file.name, mimeType: file.type || 'application/octet-stream', base64: base64 } : null
+    };
+
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+    const result = await response.json();
+
+    if(result.status !== 'ok'){
+      throw new Error(result.message || 'Falha ao salvar a inscrição.');
+    }
+
+    document.getElementById('summaryText').textContent = summary;
+    document.getElementById('whatsBtn').href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(summary);
+    document.getElementById('copyBtn').onclick = () => {
+      navigator.clipboard.writeText(summary);
+      document.getElementById('copyBtn').textContent = 'Copiado ✓';
+      setTimeout(()=> document.getElementById('copyBtn').textContent = 'Copiar resumo', 1800);
+    };
+
+    form.style.display = 'none';
+    document.getElementById('confirmCard').style.display = 'block';
+    document.getElementById('confirmCard').scrollIntoView({behavior:'smooth'});
+  } catch(err){
+    errorMsg.textContent = 'Não foi possível enviar sua inscrição agora. Verifique sua internet e tente novamente. (' + err.message + ')';
+    errorMsg.style.display = 'block';
+    submitBtn.disabled = false;
+    submitBtn.textContent = submitBtnDefaultText;
+  }
+});
+</script>
+</body>
+</html>
